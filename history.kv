@@ -1,0 +1,26 @@
+<MyButton@Button>:
+    text_size: self.width, None
+    size_hint: 1, None
+    height: self.texture_size[1]
+
+<HistoryScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+       
+        RecycleView:
+            data: [{"text":"Hello"}]
+            viewclass: "MyButton"
+            scroll_type: ['bars', 'content']
+            bar_width: 16
+            do_scroll_x: True
+            do_scroll_y: True
+            size_hint: 1.0, 1.0
+            id: recycle_view_id
+
+            RecycleBoxLayout:
+                default_size: None, None
+                default_size_hint: 1.0, None
+                size_hint: 1.0 ,None
+                height: self.minimum_height
+                orientation: "vertical"
